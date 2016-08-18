@@ -976,7 +976,10 @@ var DrawHelper = (function() {
 
         function updateExtent(value) {
             if(extent == null) {
-                extent = new Cesium.RectanglePrimitive();
+                
+                //extent = new Cesium.RectanglePrimitive();
+                // cesium version 1.24 can't find the api of RectanglePrimitive;and replace it GroundPrimitive,and i find it works！
+                extent = new Cesium.GroundPrimitive();
                 extent.asynchronous = false;
                 primitives.add(extent);
             }
